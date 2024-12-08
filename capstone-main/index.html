@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <title>Capstone Project Starting</title>
+	   <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
+	<!DOCTYPE html>
+  <title>Fog Of World</title>
+</head>
+<body>
+
+
+<div id="hover-area"></div>
+<div id="top-box">
+
+<!-- <h2>Fog Of World</h2> -->
+<!-- Trigger Button -->
+<button id="openModalBtn" class="button">Login or Sign up</button>
+
+<!-- Modal Structure -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeModalBtn">&times;</span>
+    <h2>Fog of World</h2>
+    <p>Welcome:</p>
+    <a href="login.html" class="login-button">Login</a>
+	<a href="signup.html" class="signup-button">Sign up</a>
+  </div>
+</div>
+</div>
+
+</div>
+
+<script>
+  // Get modal elements
+  const modal = document.getElementById("myModal");
+  const openModalBtn = document.getElementById("openModalBtn");
+  const closeModalBtn = document.getElementById("closeModalBtn");
+
+  // Open modal
+  openModalBtn.onclick = function () {
+    modal.style.display = "block";
+  };
+
+  // Close modal
+  closeModalBtn.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  // Close modal when clicking outside of it
+  window.onclick = function (event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>
+
+</body>
+</html>
+<html>
+    <script>
+		let currentUser;
+    var userId = [];
+		// Load the current user from localStorage
+		document.addEventListener("DOMContentLoaded", () => {
+			const savedUser = localStorage.getItem("currentUser");
+			if (savedUser) {
+				currentUser = JSON.parse(savedUser);
+        userId = currentUser.ID;
+		    	console.log("Current user loaded:", currentUser);
+			}
+		});
+    </script>
+  </head>
+  
+  <body>
+    
+    <div id="map"></div>
+    <button id="moveBoxButton" onclick="moveBox()">Move Box</button>
+    <div id="container"></div>
+
+    <!-- 
+      The `defer` attribute causes the script to execute after the full HTML
+      document has been parsed. For non-blocking uses, avoiding race conditions,
+      and consistent behavior across browsers, consider loading using Promises. See
+      https://developers.google.com/maps/documentation/javascript/load-maps-js-api
+      for more information.
+      -->
+	  
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=marker" async defer></script>
+  <script src="getJSONData.js" async defer></script>
+  <script src="putJSONData.js" async defer></script>
+  <script src="putJSONDataMarker.js" async defer></script>
+  <script src="markers.js" async defer></script>
+  <script src="sidebox.js" async defer></script>
+  <script src="initMap.js" async defer></script>  
+</body>
+</html>

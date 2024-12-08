@@ -1,0 +1,4 @@
+completely changed style.css 
+completely changed sidebox.js
+added the icon in the html file to make it appear in the browser tab.
+Added logo.png and a folder for the open sans font. both the image and the folder are on the root.
